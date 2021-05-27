@@ -409,7 +409,7 @@ function generate_matches($n,&$Team)
     {
         if($matches[$i+1]->getVar()==1)
         {
-            $matches[$i+2]=new matches($Team[count($Team)-2],$Team[count($Team)-4],"Playoff",$Venue[rand(0,3)]);
+            $matches[$i+2]=new matches($Team[count($Team)-2],$Team[count($Team)-3],"Playoff",$Venue[rand(0,3)]);
             if($matches[$i+2]->getVar()==1)
             {
                 $matches[$i+3]=new matches($Team[count($Team)-1],$Team[count($Team)-2],"Final",$Venue[rand(0,3)]);
@@ -419,7 +419,7 @@ function generate_matches($n,&$Team)
         }
         else
         {   
-               $matches[$i+2]=new matches($Team[count($Team)-2],$Team[count($Team)-3],"Playoff",$Venue[rand(0,3)]);
+               $matches[$i+2]=new matches($Team[count($Team)-2],$Team[count($Team)-4],"Playoff",$Venue[rand(0,3)]);
                if($matches[$i+2]->getVar()==1)
             {
                 $matches[$i+3]=new matches($Team[count($Team)-1],$Team[count($Team)-2],"Final",$Venue[rand(0,3)]);
@@ -432,17 +432,17 @@ function generate_matches($n,&$Team)
     {
         if($matches[$i+1]->getVar()==1)
         {
-            $matches[$i+2]=new matches($Team[count($Team)-1],$Team[count($Team)-4],"Playoff",$Venue[rand(0,3)]);
+            $matches[$i+2]=new matches($Team[count($Team)-1],$Team[count($Team)-3],"Playoff",$Venue[rand(0,3)]);
             if($matches[$i+2]->getVar()==1)
             {
                 $matches[$i+3]=new matches($Team[count($Team)-2],$Team[count($Team)-1],"Final",$Venue[rand(0,3)]);
             }        
             else
-            $matches[$i+3]=new matches($Team[count($Team)-2],$Team[count($Team)-4],"Final",$Venue[rand(0,3)]);        
+            $matches[$i+3]=new matches($Team[count($Team)-2],$Team[count($Team)-3],"Final",$Venue[rand(0,3)]);        
         }
         else
         {   
-               $matches[$i+2]=new matches($Team[count($Team)-1],$Team[count($Team)-3],"Playoff",$Venue[rand(0,3)]);
+               $matches[$i+2]=new matches($Team[count($Team)-1],$Team[count($Team)-4],"Playoff",$Venue[rand(0,3)]);
                if($matches[$i+2]->getVar()==1)
             {
                 $matches[$i+3]=new matches($Team[count($Team)-2],$Team[count($Team)-1],"Final",$Venue[rand(0,3)]);
