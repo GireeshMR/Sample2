@@ -11,7 +11,7 @@ if (preg_match('/^([A-Z]){5}([0-9]){4}([A-Z]){1}?$/', $string)) {
     echo " The given String is Credit Card Number";
 }
 elseif (preg_match('/^([\w]+)(\.[\w]+)*@([\w]+\.)+[a-z]{2,3}$/', $string)) {
-    echo "The Sting is an Email";
+    echo "The String is an Email";
 } 
 else
 echo "The string is random sentence"
