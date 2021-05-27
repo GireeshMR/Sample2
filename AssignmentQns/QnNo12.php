@@ -14,5 +14,5 @@ elseif (preg_match('/^([\w]+)(\.[\w]+)*@([\w]+\.)+[a-z]{2,3}$/', $string)) {
     echo "The Sting is an Email";
 } 
 else
-echo "The string is random sentance"
+echo "The string is random sentence"
 ?>
