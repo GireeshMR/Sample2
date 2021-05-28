@@ -531,6 +531,7 @@ do{$value=true;
         case 3:
             
             $match_type = readline('Enter match type ("Normal","Playoff","Final") ');
+            $match_no=1;
             if($match_type == "Normal")
             {   $match_no = readline("Enter match number Normal 1 to ". count($matches)-4);
                 echo"\n\n";
