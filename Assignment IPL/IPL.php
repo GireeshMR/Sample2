@@ -489,20 +489,33 @@ function display_Teams_Name($Teams)
 
 
 $Team = array();
-$n = readline(" Enter the number of teams ");    
+//extra added*********
+//$n = number of teams
+$n = 1;
+while ($n < 4) {
+    $n = readline(" Enter the number of teams ");
+    try {
+        if ($n < 4) {
+            throw new Exception("Number of teams should be greater than 3");
+        }} catch (Exception $E1) {
+        echo $E1->getMessage() . "\n";
+    }}
+//extra added comple*********
+
 for($i=0;$i<$n;$i++)    
     {   
         $Team_name = readline("Enter name of the Team ");
+
         $Team[$i] = new teams($Team_name);
     }
    $matches = array();
    $matches = generate_matches($n,$Team);
-do{$value=true;
+   do{$value=true;
     echo"\n\n";
     echo "Enter 1 to print all the Team Names in IPL 2021 \n";
     echo "Enter 2 for Displaying specific Team Stats\n";
-    echo "Enter 3 fro Match Details\n";
-    echo "Enter 4  for points Details\n";
+    echo "Enter 3 for Match Details\n";
+    echo "Enter 4 for points Details\n";
     echo "Enter 5 to exit\n\n";
     //echo "Enter 5  Player list in a team\n";(optional)
     $choice = readline();
@@ -516,7 +529,7 @@ do{$value=true;
             echo"\n\n";    
         break;
         case 2:
-            $TName = readline("Enter Team name");
+            $TName = readline("Enter Team name ");
             echo"\n\n";
             foreach($Team as $Teams)
             {
@@ -533,12 +546,20 @@ do{$value=true;
             $match_type = readline('Enter match type ("Normal","Playoff","Final") ');
             $match_no=1;
             if($match_type == "Normal")
-            {   $match_no = readline("Enter match number Normal 1 to ". count($matches)-4);
+            {   $match_no = readline("Enter match number Normal 1 to ". count($matches)-4 ." ");
+                if(!($match_no>0 && $match_no < count($matches)-4))
+                {
+                    throw new Exception("Enter Valid Match Number");
+                }
                 echo"\n\n";
                 $matches[$match_no-1]->match_details($match_type,$match_no);
             }
             else if($match_type == "Playoff")
             {$match_no = readline("Enter Playoff match number from 1 to 3");
+                if(!($match_no>0 && $match_no < 4))
+                {
+                    throw new Exception("Enter Valid Match Number");
+                }
                 echo"\n\n";
                 $matches[count($matches)-1-(4-$match_no)]->match_details($match_type,$match_no);
             }
@@ -558,14 +579,14 @@ do{$value=true;
         case 5: 
             $value = false;
             break;
+        default :
+        throw new Exception("Choose Correct Choice");
     }    
 
    }
    catch(Exception $E1)
    {
-         echo"Enter valid Data!!!  \n";
+         echo"Enter valid Data!!!  \n".$E1->getMessage();
    }
 }while($value);
-
-
 ?>
