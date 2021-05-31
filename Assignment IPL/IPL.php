@@ -187,8 +187,8 @@ class teams{
 //**************************** Matches Class Started ************************/
 
 class matches implements IPL{
-    private static $initial_Date = array("Day"=>01,"Month"=>"Apr","Year"=>IPL::year);
-   
+    private static $initial_Date = array("Day"=>1,"Month"=>"Apr","Year"=>IPL::year);
+    private static $count = 0;
     private static $normal_match_no = 1;
     private static $Qualifier_match_no = 1;
     private static $final_match_no = 1;
@@ -208,7 +208,6 @@ class matches implements IPL{
     
     public function __construct($Team1,$Team2,$Match_type,$venue)
     {   $monthS =array("Apr","May","June");
-        $count=1;
         if($Match_type == "Normal")
         {
             $Match_No = matches::$normal_match_no++;
@@ -225,7 +224,7 @@ class matches implements IPL{
             $this->Team1 = $Team1->getTeam_name();
             $this->Team2 = $Team2->getTeam_name();
             $this->venue = $venue;
-            if(matches::$initial_Date["Day"]<=30)
+            if(matches::$initial_Date["Day"]<=28)
             {
                 matches::$initial_Date["Day"]+=2;
                 $this->Date = matches::$initial_Date;
@@ -233,7 +232,8 @@ class matches implements IPL{
             else
             {
                 matches::$initial_Date["Day"] = 1;
-                matches::$initial_Date["month"] = $monthS[$count++];
+                matches::$initial_Date["Month"] = $monthS[++matches::$count];
+                $this->Date = matches::$initial_Date;
 
             }
             if(rand(1,2)==1)
@@ -547,7 +547,7 @@ for($i=0;$i<$n;$i++)
             $match_no=1;
             if($match_type == "Normal")
             {   $match_no = readline("Enter match number Normal 1 to ". count($matches)-4 ." ");
-                if(!($match_no>0 && $match_no < count($matches)-4))
+                if(!($match_no>0 && $match_no < count($matches)-3))
                 {
                     throw new Exception("Enter Valid Match Number");
                 }
