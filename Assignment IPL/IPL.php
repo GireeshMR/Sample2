@@ -9,7 +9,7 @@ interface IPL{
 
 /******************** IPL interface ended **************************/
 
-# trait Playes contains the player name and main Skill of the Player
+# trait Players contains the player name and main Skill of the Player
 trait Players{
     
     Private $Player_name;
