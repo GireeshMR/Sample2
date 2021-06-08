@@ -1,6 +1,6 @@
 <?php
 
-use Assignment_IPL as Teams;
+
 require 'teams.php';
 
 interface IPL{
@@ -8,7 +8,7 @@ interface IPL{
     public function display();
 }
 
-class matches implements IPL{
+class matches123 implements IPL{
     private static $initial_Date = array("Day"=>01,"Month"=>"JAN","Year"=>IPL::year);
     private static $intial_Match_Time = array("hour"=>7,"minutes"=>30);
     private static $normal_match_no = 1;
@@ -59,6 +59,9 @@ class matches implements IPL{
 
     }
 
+}
+class custException extends Exception{
+    
 }
 
 //crate teams
