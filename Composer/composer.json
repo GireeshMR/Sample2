@@ -1,0 +1,31 @@
+{
+    "name": "giri/pack",
+    "autoload": {
+        "psr-4": {
+           
+            "Myfile\\" : "myfile"
+            
+        },
+        "files": [
+            "vendor/Illuminate/Support/sampleFunction.php" 
+        ],
+        "classmap":[
+            "vendor/Illuminate/support"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Gireesh M R",
+            "email": "gireeshmr.ec14@rvce.edu.in"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^8.47",
+        "laravel/helpers": "^1.4"
+    }
+   
+      
+      
+
+    
+}
