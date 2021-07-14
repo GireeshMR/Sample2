@@ -3,7 +3,7 @@
 class demo{
     function __construct()
     {
-        echo "demo Constructor in sampleClass.php<br/>";
+        echo "demo Constructor in sampleClass.php";
     }
 }
 

@@ -1,6 +1,6 @@
 <?php 
 function add()
 {
-    echo "this is add function in sampleFunction.php<br/>";
+    echo "this is add function in sampleFunction.php";
 }
 ?>
